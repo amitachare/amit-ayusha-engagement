@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c2d">
+  <meta name="description" content="A royal Maharashtrian engagement invitation for Amit & Ayusha.">
+  <title>Amit & Ayusha | Engagement Invitation</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Hind:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="petal petal-1">✿</span><span class="petal petal-2">❋</span>
+    <span class="petal petal-3">✿</span><span class="petal petal-4">❋</span>
+    <span class="petal petal-5">✿</span><span class="petal petal-6">❋</span>
+  </div>
+
+  <header class="topbar">
+    <a class="monogram" href="#home" aria-label="Amit and Ayusha home">A <span>&</span> A</a>
+    <span class="topbar-note">A CELEBRATION OF LOVE</span>
+    <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" title="Toggle invitation music">♫ <span>Music</span></button>
+  </header>
+
+  <main id="home">
+    <section class="hero section-shell">
+      <div class="ornament ornament-top" aria-hidden="true">❦ ❧ ❦</div>
+      <img class="ganesh-motif" src="assets/ganesh-motif.svg" alt="Decorative Ganesh motif">
+      <p class="eyebrow">॥ श्री गणेशाय नमः ॥</p>
+      <p class="intro">With the blessings of our families</p>
+      <h1 class="names"><span id="personOne">Amit</span><span class="ampersand">&</span><span id="personTwo">Ayusha</span></h1>
+      <div class="gold-rule"><span>✦</span></div>
+      <p class="hero-copy">Two hearts, one beautiful beginning.<br>We invite you to celebrate our engagement.<br><span class="marathi">दोन मनं, एक सुंदर सुरुवात.<br>आमच्या साखरपुड्याच्या आनंदात सहभागी व्हा.</span></p>
+      <div class="date-pill"><span class="date-icon">✧</span><span id="eventDateShort">DATE TO BE ANNOUNCED</span><span class="date-icon">✧</span></div>
+      <button class="open-invite" id="openInvite" type="button"><span>✦</span> Open Our Invitation <span>✦</span></button>
+      <div class="hero-bottom">A LITTLE TRADITION · A LOT OF LOVE</div>
+    </section>
+
+    <section class="details section-shell reveal" id="details">
+      <p class="eyebrow">THE BEGINNING OF FOREVER</p>
+      <h2>Join us for our <em>engagement</em></h2>
+      <p class="section-copy">Your presence will make this special day even more memorable.<br><span class="marathi">आपली उपस्थिती हा आनंदाचा क्षण अधिक खास करेल.</span></p>
+      <div class="details-grid">
+        <article class="detail-card">
+          <div class="detail-symbol">✧</div>
+          <p class="card-label">THE DATE</p>
+          <h3 id="eventDate">Date to be announced</h3>
+          <p id="eventTime">Time to be announced</p>
+          <button class="text-button" id="calendarButton" type="button">＋ Add to calendar</button>
+        </article>
+        <article class="detail-card">
+          <div class="detail-symbol">⌖</div>
+          <p class="card-label">THE VENUE</p>
+          <h3 id="venueName">Venue to be announced</h3>
+          <p id="venueAddress">Venue address will be shared soon.</p>
+          <a class="text-button" id="mapButton" href="#" target="_blank" rel="noopener">↗ Get directions</a>
+        </article>
+      </div>
+      <div class="family-note">
+        <span class="family-line"></span>
+        <p id="familyMessage">Together with our families, we look forward to celebrating with you.</p>
+        <span class="family-line"></span>
+      </div>
+    </section>
+
+    <section class="gallery section-shell reveal" id="gallery">
+      <p class="eyebrow">OUR MOMENTS · आमच्या आठवणी</p>
+      <h2>A little glimpse of <em>us</em></h2>
+      <p class="section-copy">Add your favourite couple photos to make this invitation your own.<br><span class="marathi">तुमचे आवडते फोटो येथे जोडा.</span></p>
+      <div class="photo-grid">
+        <figure class="photo-frame photo-large">
+          <img src="assets/couple-photo-1.jpg" alt="Amit and Ayusha — favourite photo 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="photo-placeholder"><span>✿</span><strong>Our Story</strong><small>Add couple-photo-1.jpg</small></div>
+        </figure>
+        <figure class="photo-frame">
+          <img src="assets/couple-photo-2.jpg" alt="Amit and Ayusha — favourite photo 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="photo-placeholder"><span>❦</span><strong>Sweet Moments</strong><small>Add couple-photo-2.jpg</small></div>
+        </figure>
+        <figure class="photo-frame">
+          <img src="assets/couple-photo-3.jpg" alt="Amit and Ayusha — favourite photo 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="photo-placeholder"><span>✧</span><strong>Forever Begins</strong><small>Add couple-photo-3.jpg</small></div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="closing section-shell reveal">
+      <div class="closing-flower" aria-hidden="true">❀</div>
+      <p class="eyebrow">SAVE THE DATE</p>
+      <h2>Love is sweeter<br>when <em>shared.</em></h2>
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div><strong id="days">—</strong><span>DAYS</span></div>
+        <div><strong id="hours">—</strong><span>HOURS</span></div>
+        <div><strong id="minutes">—</strong><span>MINUTES</span></div>
+        <div><strong id="seconds">—</strong><span>SECONDS</span></div>
+      </div>
+      <p class="closing-copy">We can't wait to celebrate this new chapter with you.<br><span class="marathi">या नव्या प्रवासाची सुरुवात तुमच्यासोबत साजरी करण्यास आम्ही उत्सुक आहोत.</span></p>
+      <button class="share-button" id="shareButton" type="button">Share the invitation <span>↗</span></button>
+      <p class="signature">With love, <span id="signatureNames">Amit & Ayusha</span></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>MADE WITH LOVE · प्रेमपूर्वक</span><span class="footer-heart">♥</span><span>AMIT & AYUSHA</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
