@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="documentRoot">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,8 @@
 
   <header class="topbar">
     <a class="monogram" href="#home" aria-label="Amit and Ayusha home">A <span>&</span> A</a>
-    <span class="topbar-note">A CELEBRATION OF LOVE</span>
+    <span class="topbar-note" data-i18n="topbarNote">A CELEBRATION OF LOVE</span>
+    <div class="language-toggle" role="group" aria-label="Select invitation language"><button type="button" class="language-option active" id="langEnglish" aria-pressed="true">EN</button><button type="button" class="language-option" id="langMarathi" aria-pressed="false">मराठी</button></div>
     <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" title="Toggle invitation music">♫ <span>Music</span></button>
   </header>
 
@@ -30,80 +31,80 @@
       <div class="ornament ornament-top" aria-hidden="true">❦ ❧ ❦</div>
       <img class="ganesh-motif" src="assets/ganesh-motif.svg" alt="Decorative Ganesh motif">
       <p class="eyebrow">॥ श्री गणेशाय नमः ॥</p>
-      <p class="intro">With the blessings of our families</p>
+      <p class="intro" data-i18n="intro">With the blessings of our families</p>
       <h1 class="names"><span id="personOne">Amit</span><span class="ampersand">&</span><span id="personTwo">Ayusha</span></h1>
       <div class="gold-rule"><span>✦</span></div>
-      <p class="hero-copy">Two hearts, one beautiful beginning.<br>We invite you to celebrate our engagement.<br><span class="marathi">दोन मनं, एक सुंदर सुरुवात.<br>आमच्या साखरपुड्याच्या आनंदात सहभागी व्हा.</span></p>
+      <p class="hero-copy" data-i18n="heroCopy">Two hearts, one beautiful beginning.<br>We invite you to celebrate our engagement.</p>
       <div class="date-pill"><span class="date-icon">✧</span><span id="eventDateShort">DATE TO BE ANNOUNCED</span><span class="date-icon">✧</span></div>
-      <button class="open-invite" id="openInvite" type="button"><span>✦</span> Open Our Invitation <span>✦</span></button>
-      <div class="hero-bottom">A LITTLE TRADITION · A LOT OF LOVE</div>
+      <button class="open-invite" id="openInvite" type="button"><span>✦</span> <span data-i18n="openInvite">Open Our Invitation</span> <span>✦</span></button>
+      <div class="hero-bottom" data-i18n="heroBottom">A LITTLE TRADITION · A LOT OF LOVE</div>
     </section>
 
     <section class="details section-shell reveal" id="details">
-      <p class="eyebrow">THE BEGINNING OF FOREVER</p>
-      <h2>Join us for our <em>engagement</em></h2>
-      <p class="section-copy">Your presence will make this special day even more memorable.<br><span class="marathi">आपली उपस्थिती हा आनंदाचा क्षण अधिक खास करेल.</span></p>
+      <p class="eyebrow" data-i18n="detailsEyebrow">THE BEGINNING OF FOREVER</p>
+      <h2 data-i18n="detailsTitle">Join us for our <em>engagement</em></h2>
+      <p class="section-copy" data-i18n="detailsCopy">Your presence will make this special day even more memorable.</p>
       <div class="details-grid">
         <article class="detail-card">
           <div class="detail-symbol">✧</div>
-          <p class="card-label">THE DATE</p>
+          <p class="card-label" data-i18n="dateLabel">THE DATE</p>
           <h3 id="eventDate">Date to be announced</h3>
           <p id="eventTime">Time to be announced</p>
-          <button class="text-button" id="calendarButton" type="button">＋ Add to calendar</button>
+          <button class="text-button" id="calendarButton" type="button" data-i18n="calendarButton">＋ Add to calendar</button>
         </article>
         <article class="detail-card">
           <div class="detail-symbol">⌖</div>
-          <p class="card-label">THE VENUE</p>
+          <p class="card-label" data-i18n="venueLabel">THE VENUE</p>
           <h3 id="venueName">Venue to be announced</h3>
           <p id="venueAddress">Venue address will be shared soon.</p>
-          <a class="text-button" id="mapButton" href="#" target="_blank" rel="noopener">↗ Get directions</a>
+          <a class="text-button" id="mapButton" href="#" target="_blank" rel="noopener" data-i18n="mapButton">↗ Get directions</a>
         </article>
       </div>
       <div class="family-note">
         <span class="family-line"></span>
-        <p id="familyMessage">Together with our families, we look forward to celebrating with you.</p>
+        <p id="familyMessage" data-i18n="familyMessage">Together with our families, we look forward to celebrating with you.</p>
         <span class="family-line"></span>
       </div>
     </section>
 
     <section class="gallery section-shell reveal" id="gallery">
-      <p class="eyebrow">OUR MOMENTS · आमच्या आठवणी</p>
-      <h2>A little glimpse of <em>us</em></h2>
-      <p class="section-copy">Add your favourite couple photos to make this invitation your own.<br><span class="marathi">तुमचे आवडते फोटो येथे जोडा.</span></p>
+      <p class="eyebrow" data-i18n="galleryEyebrow">OUR MOMENTS</p>
+      <h2 data-i18n="galleryTitle">A little glimpse of <em>us</em></h2>
+      <p class="section-copy" data-i18n="galleryCopy">Add your favourite couple photos to make this invitation your own.</p>
       <div class="photo-grid">
         <figure class="photo-frame photo-large">
           <img src="assets/couple-photo-1.jpg" alt="Amit and Ayusha — favourite photo 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="photo-placeholder"><span>✿</span><strong>Our Story</strong><small>Add couple-photo-1.jpg</small></div>
+          <div class="photo-placeholder"><span>✿</span><strong data-i18n="ourStory">Our Story</strong><small data-i18n="photoHint">Add couple-photo-1.jpg</small></div>
         </figure>
         <figure class="photo-frame">
           <img src="assets/couple-photo-2.jpg" alt="Amit and Ayusha — favourite photo 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="photo-placeholder"><span>❦</span><strong>Sweet Moments</strong><small>Add couple-photo-2.jpg</small></div>
+          <div class="photo-placeholder"><span>❦</span><strong data-i18n="sweetMoments">Sweet Moments</strong><small data-i18n="photoHint2">Add couple-photo-2.jpg</small></div>
         </figure>
         <figure class="photo-frame">
           <img src="assets/couple-photo-3.jpg" alt="Amit and Ayusha — favourite photo 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="photo-placeholder"><span>✧</span><strong>Forever Begins</strong><small>Add couple-photo-3.jpg</small></div>
+          <div class="photo-placeholder"><span>✧</span><strong data-i18n="foreverBegins">Forever Begins</strong><small data-i18n="photoHint3">Add couple-photo-3.jpg</small></div>
         </figure>
       </div>
     </section>
 
     <section class="closing section-shell reveal">
       <div class="closing-flower" aria-hidden="true">❀</div>
-      <p class="eyebrow">SAVE THE DATE</p>
-      <h2>Love is sweeter<br>when <em>shared.</em></h2>
+      <p class="eyebrow" data-i18n="saveDate">SAVE THE DATE</p>
+      <h2 data-i18n="closingTitle">Love is sweeter<br>when <em>shared.</em></h2>
       <div class="countdown" id="countdown" aria-live="polite">
-        <div><strong id="days">—</strong><span>DAYS</span></div>
-        <div><strong id="hours">—</strong><span>HOURS</span></div>
-        <div><strong id="minutes">—</strong><span>MINUTES</span></div>
-        <div><strong id="seconds">—</strong><span>SECONDS</span></div>
+        <div><strong id="days">—</strong><span data-i18n="days">DAYS</span></div>
+        <div><strong id="hours">—</strong><span data-i18n="hours">HOURS</span></div>
+        <div><strong id="minutes">—</strong><span data-i18n="minutes">MINUTES</span></div>
+        <div><strong id="seconds">—</strong><span data-i18n="seconds">SECONDS</span></div>
       </div>
-      <p class="closing-copy">We can't wait to celebrate this new chapter with you.<br><span class="marathi">या नव्या प्रवासाची सुरुवात तुमच्यासोबत साजरी करण्यास आम्ही उत्सुक आहोत.</span></p>
-      <button class="share-button" id="shareButton" type="button">Share the invitation <span>↗</span></button>
-      <p class="signature">With love, <span id="signatureNames">Amit & Ayusha</span></p>
+      <p class="closing-copy" data-i18n="closingCopy">We can't wait to celebrate this new chapter with you.</p>
+      <button class="share-button" id="shareButton" type="button"><span data-i18n="shareButton">Share the invitation</span> <span>↗</span></button>
+      <p class="signature"><span data-i18n="withLove">With love,</span> <span id="signatureNames">Amit & Ayusha</span></p>
     </section>
   </main>
 
   <footer class="footer">
-    <span>MADE WITH LOVE · प्रेमपूर्वक</span><span class="footer-heart">♥</span><span>AMIT & AYUSHA</span>
+    <span data-i18n="footerMade">MADE WITH LOVE</span><span class="footer-heart">♥</span><span>AMIT & AYUSHA</span>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
