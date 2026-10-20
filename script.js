@@ -151,35 +151,21 @@
     }
   });
 
-  const musicButton = $("musicToggle");
+  // Background engagement music: attempt autoplay on load, then retry on the
+  // first guest interaction if the browser blocks autoplay with sound.
   const invitationAudio = $("invitationAudio");
-  function syncMusicButton() {
-    const playing = invitationAudio && !invitationAudio.paused;
-    musicButton.setAttribute("aria-pressed", String(Boolean(playing)));
-    musicButton.innerHTML = playing ? "♫ <span>Pause</span>" : "♫ <span>Music</span>";
-  }
   if (invitationAudio) {
-    invitationAudio.addEventListener("play", syncMusicButton);
-    invitationAudio.addEventListener("pause", syncMusicButton);
-    invitationAudio.addEventListener("ended", syncMusicButton);
-    // Attempt autoplay; browsers may require a visitor gesture before sound can play.
-    invitationAudio.play().catch(() => {});
+    invitationAudio.volume = 0.7;
+    const tryStartMusic = () => {
+      if (!invitationAudio || !invitationAudio.paused) return;
+      const playPromise = invitationAudio.play();
+      if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+    };
+    tryStartMusic();
+    document.addEventListener("pointerdown", tryStartMusic, { once: true, passive: true });
+    document.addEventListener("keydown", tryStartMusic, { once: true });
+    $("openInvite").addEventListener("click", tryStartMusic);
   }
-  musicButton.addEventListener("click", async () => {
-    if (!invitationAudio) return;
-    if (invitationAudio.paused) {
-      try {
-        await invitationAudio.play();
-        toast(currentLanguage === "mr" ? "गाणे सुरू झाले." : "Music is playing.");
-      } catch (e) {
-        toast(currentLanguage === "mr" ? "गाणे सुरू करण्यासाठी वरील Play दाबा." : "Please press Play in the music player above.");
-        $("our-song").scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    } else {
-      invitationAudio.pause();
-    }
-    syncMusicButton();
-  });
 
   const observer = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
     entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); } });
