@@ -16,5 +16,5 @@ window.INVITATION = {
   venueAddress: "Tisgaon Road, Kalyan East, Kalyan-421306",
   mapQuery: "Parvati Marriage Hall, Tisgaon Road, Kalyan East, Kalyan-421306, Maharashtra, India",
   familyMessage: "With the blessings of our families, we invite you to celebrate this beautiful beginning.\\nआमच्या कुटुंबीयांच्या आशीर्वादाने, या मंगलमय सोहळ्यास आपण उपस्थित राहावे, ही विनंती.",
-  musicUrl: "https://www.youtube.com/watch?v=0BIaDVnYp2A"
+  musicUrl: ""
 };

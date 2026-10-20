@@ -20,7 +20,7 @@
     en: {
       topbarNote: "A CELEBRATION OF LOVE", intro: "With the blessings of our families",
       musicEyebrow: "OUR SONG", musicTitle: "A melody for <em>our beginning</em>",
-      musicCopy: "Let this song play as you explore our invitation.", musicNote: "Autoplay depends on your browser. If the music doesn't start, tap Play Music.",
+      musicCopy: "Let this song play as you explore our invitation.", musicNote: "Music may be blocked from autoplay by your browser. If it does not start, tap the Music button or press Play above.",
       heroCopy: "Two hearts, one beautiful beginning.<br>We invite you to celebrate our engagement.",
       openInvite: "Open Our Invitation", heroBottom: "A LITTLE TRADITION · A LOT OF LOVE",
       detailsEyebrow: "THE BEGINNING OF FOREVER", detailsTitle: "Join us for our <em>engagement</em>",
@@ -38,7 +38,7 @@
     mr: {
       topbarNote: "प्रेमाचा सुंदर सोहळा", intro: "आमच्या कुटुंबीयांच्या आशीर्वादाने",
       musicEyebrow: "आपले खास गाणे", musicTitle: "आपल्या नव्या प्रवासाची <em>मधुर सुरुवात</em>",
-      musicCopy: "आमंत्रण पाहताना हे गाणे ऐका.", musicNote: "गाणे आपोआप सुरू होणे ब्राउझरवर अवलंबून आहे. सुरू न झाल्यास Music बटण दाबा.",
+      musicCopy: "आमंत्रण पाहताना हे गाणे ऐका.", musicNote: "ब्राउझरमुळे गाणे आपोआप सुरू होणार नाही कदाचित. सुरू न झाल्यास Music बटण किंवा वरील Play दाबा.",
       heroCopy: "दोन मनं, एक सुंदर सुरुवात.<br>आमच्या साखरपुड्याच्या आनंदात सहभागी व्हा.",
       openInvite: "आमंत्रण पहा", heroBottom: "परंपरेचा साज · प्रेमाची साथ",
       detailsEyebrow: "एका नव्या प्रवासाची सुरुवात", detailsTitle: "आमच्या <em>साखरपुड्याला</em> जरूर या",
@@ -152,26 +152,33 @@
   });
 
   const musicButton = $("musicToggle");
-  const youtubePlayer = $("youtubeMusicPlayer");
-  let musicPlaying = false;
-  function sendYouTubeCommand(command) {
-    if (!youtubePlayer || !youtubePlayer.contentWindow) return;
-    youtubePlayer.contentWindow.postMessage(JSON.stringify({ event: "command", func: command, args: [] }), "*");
+  const invitationAudio = $("invitationAudio");
+  function syncMusicButton() {
+    const playing = invitationAudio && !invitationAudio.paused;
+    musicButton.setAttribute("aria-pressed", String(Boolean(playing)));
+    musicButton.innerHTML = playing ? "♫ <span>Pause</span>" : "♫ <span>Music</span>";
   }
-  musicButton.addEventListener("click", () => {
-    if (!musicPlaying) {
-      sendYouTubeCommand("playVideo");
-      musicPlaying = true;
-      musicButton.setAttribute("aria-pressed", "true");
-      musicButton.innerHTML = "♫ <span>Pause</span>";
-      if (youtubePlayer) youtubePlayer.scrollIntoView({ behavior: "smooth", block: "center" });
-      toast(currentLanguage === "mr" ? "गाणे सुरू करण्याचा प्रयत्न केला आहे." : "Trying to play the song.");
+  if (invitationAudio) {
+    invitationAudio.addEventListener("play", syncMusicButton);
+    invitationAudio.addEventListener("pause", syncMusicButton);
+    invitationAudio.addEventListener("ended", syncMusicButton);
+    // Attempt autoplay; browsers may require a visitor gesture before sound can play.
+    invitationAudio.play().catch(() => {});
+  }
+  musicButton.addEventListener("click", async () => {
+    if (!invitationAudio) return;
+    if (invitationAudio.paused) {
+      try {
+        await invitationAudio.play();
+        toast(currentLanguage === "mr" ? "गाणे सुरू झाले." : "Music is playing.");
+      } catch (e) {
+        toast(currentLanguage === "mr" ? "गाणे सुरू करण्यासाठी वरील Play दाबा." : "Please press Play in the music player above.");
+        $("our-song").scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     } else {
-      sendYouTubeCommand("pauseVideo");
-      musicPlaying = false;
-      musicButton.setAttribute("aria-pressed", "false");
-      musicButton.innerHTML = "♫ <span>Music</span>";
+      invitationAudio.pause();
     }
+    syncMusicButton();
   });
 
   const observer = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
