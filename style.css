@@ -112,3 +112,10 @@ button { font: inherit; }
 }
 
 .ganesh-motif { width: 58px; height: 58px; object-fit: contain; margin: -7px 0 14px; opacity: .95; filter: drop-shadow(0 2px 4px #071a10); }
+
+
+/* YouTube music section */
+.music-section { text-align: center; padding-top: 44px; padding-bottom: 60px; }
+.music-player-frame { width: min(100%, 560px); aspect-ratio: 16 / 9; margin: 26px auto 14px; overflow: hidden; border: 1px solid var(--gold, #b89b5e); border-radius: 18px; box-shadow: 0 14px 38px rgba(0,0,0,.18); background: #071b14; }
+.music-player-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.music-note { max-width: 560px; margin: 0 auto; font-size: .86rem; line-height: 1.6; opacity: .78; }
