@@ -14,7 +14,7 @@
   $("eventTime").textContent = cfg.eventTimeDisplay || "Time to be announced";
   $("venueName").textContent = cfg.venueName || "Venue to be announced";
   $("venueAddress").textContent = cfg.venueAddress || "Venue address will be shared soon.";
-  $("familyMessage").textContent = cfg.familyMessage || "Together with our families, we look forward to celebrating with you.";
+  $("familyMessage").textContent = cfg.familyMessage || "Together with our families, we invite you to celebrate the beginning of our forever.";
 
   const translations = {
     en: {
@@ -27,8 +27,7 @@
       detailsCopy: "Your presence will make this special day even more memorable.", dateLabel: "THE DATE",
       calendarButton: "＋ Add to calendar", venueLabel: "THE VENUE", mapButton: "↗ Get directions",
       familyMessage: "With the blessings of our families, we invite you to celebrate this beautiful beginning.",
-      galleryEyebrow: "OUR MOMENTS", galleryTitle: "A little glimpse of <em>us</em>",
-      galleryCopy: "Add your favourite couple photos to make this invitation your own.",
+      galleryEyebrow: "OUR MOMENTS", galleryTitle: "From little moments to <em> forever memories.</em>",
       ourStory: "Our Story", photoHint: "Add couple-photo-1.jpg", sweetMoments: "Sweet Moments",
       photoHint2: "Add couple-photo-2.jpg", foreverBegins: "Forever Begins", photoHint3: "Add couple-photo-3.jpg",
       saveDate: "SAVE THE DATE", closingTitle: "Love is sweeter<br>when <em>shared.</em>", days: "DAYS", hours: "HOURS",
@@ -46,7 +45,6 @@
       calendarButton: "＋ कॅलेंडरमध्ये जोडा", venueLabel: "स्थळ", mapButton: "↗ स्थळाचा मार्ग पहा",
       familyMessage: "आमच्या कुटुंबीयांच्या आशीर्वादाने, या मंगलमय सोहळ्यास आपण उपस्थित राहावे, ही विनंती.",
       galleryEyebrow: "आमच्या आठवणी", galleryTitle: "आमच्या <em>आठवणींची</em> एक झलक",
-      galleryCopy: "हे आमंत्रण खास बनवण्यासाठी तुमचे आवडते जोडप्याचे फोटो येथे जोडा.",
       ourStory: "आमची कहाणी", photoHint: "couple-photo-1.jpg जोडा", sweetMoments: "सुंदर क्षण",
       photoHint2: "couple-photo-2.jpg जोडा", foreverBegins: "साथ आयुष्यभराची", photoHint3: "couple-photo-3.jpg जोडा",
       saveDate: "दिनांक लक्षात ठेवा", closingTitle: "प्रेमाचा आनंद<br><em>सर्वांसोबत.</em>", days: "दिवस", hours: "तास",
